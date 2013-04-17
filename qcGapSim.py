@@ -1,5 +1,5 @@
 import numpy as np
-help(np.random.randn)
+#help(np.random.randn)
 
 # This example is from the notes of IEM 5103 (chapter 11, slide 21)
 #   part A has a mean of 5 and a range of +/- 0.3 
@@ -14,9 +14,11 @@ partA, partB, partC
 # output parameters
 
 # now let us create 3 arrays of normally distributed values
-#   for about 1000 values
+#   remember this implementation uses 4*L elements
 # A = u + Z*SD, transformation from N(0,1) to N(u,s^2)
-L = 1000000
+L = 1000000 # 1 million
+#L = 10000000 # 10 million
+#L = 50000000 # 50 million
 
 A = partA[0] + np.random.randn(L)*partA[1]
 B = partB[0] + np.random.randn(L)*partB[1]
@@ -41,4 +43,4 @@ gap[L-1]
 # compute some statistics
 #   should work out to
 #   u = 10 - 2 - 5 = 3
-np.mean(gap), np.std(gap)
+print np.mean(gap), np.std(gap)
