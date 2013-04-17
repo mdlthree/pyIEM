@@ -2,13 +2,13 @@ import numpy as np
 #help(np.random.randn)
 
 # This example is from the notes of IEM 5103 (chapter 11, slide 21)
-#   part A has a mean of 5 and a range of +/- 0.3 
-#   which we can convert to a SD by dividing by Z(a = 0.05) or 1.96
+#   part A has a mean of 5 and a range of +/- 0.3 = 0.6 
+#   which we can convert to a SD by dividing by 6 (99.7% data is in 6 SDs)
 
-partA = (5,0.3/1.96)
+partA = (5,0.3*2/6)
 #  which we store as a tuple (like an immutable array)
-partB = (2,0.2/1.96)
-partC = (10, 0.1/1.96)
+partB = (2,0.2*2/6)
+partC = (10, 0.1*2/6)
 
 partA, partB, partC
 # output parameters
